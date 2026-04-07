@@ -4,6 +4,12 @@ variable "name" {
   description = "Name of the virtual network"
 }
 
+variable "subnet_name" {
+  default     = "vnet-global360-task"
+  type        = string
+  description = "Name of the subnet network"
+}
+
 variable "location" {
   default     = "australiaeast"
   type        = string
@@ -20,4 +26,10 @@ variable "address_space" {
   default     = ["10.0.0.0/16"]
   type        = list
   description = "The address space that is used the virtual network. You can supply more than one address space"
+}
+
+variable "address_prefixes" {
+  default     = ["10.0.1.0/24"]
+  type        = list
+  description = "The address prefixes to use for the subnet"
 }
