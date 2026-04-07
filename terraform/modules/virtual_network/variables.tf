@@ -5,7 +5,7 @@ variable "name" {
 }
 
 variable "subnet_name" {
-  default     = "vnet-global360-task"
+  default     = "snet-global360-task"
   type        = string
   description = "Name of the subnet network"
 }
