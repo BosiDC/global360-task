@@ -6,6 +6,9 @@ I have decided to build this on Azure as I have extensive experience building on
 ## Steps to run
 ### Authenticate Terraform to Azure
 1. Authenticate Terraform to Azure using Azure CLI: `az login`
+1. (Optional) Set specific Azure subscription if required: `az account set --subscription "<subscription_id_or_subscription_name>"`
+
+OPTIONAL: Create a Service Principal
 1. Create a Service Principal: `az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<SUBSCRIPTION_ID>"`
 1. Set environment variables: 
 ```
