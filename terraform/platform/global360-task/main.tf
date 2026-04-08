@@ -33,12 +33,9 @@ module "virtual_network" {
 module "ssh_key" {
   source    = "../../modules/ssh_key"
 
-  parent_id = module.resource_group.name
+  parent_id = module.resource_group.id
   location  = var.location
 }
-
-# virtual machine scale set
-
 
 # load balancer
 module "load_balancer" {
@@ -48,4 +45,21 @@ module "load_balancer" {
   location            = var.location
   resource_group_name = module.resource_group.name
   lbe_name            = var.lbe_name
+}
+
+# virtual machine scale set
+module "linux_vm_scale_set" {
+  source = "../../modules/linux_vm_scale_set"
+
+  name       = var.vmss_name
+  rg_name    = module.resource_group.name
+  location   = var.location
+  instances  = var.instances
+  public_key = module.ssh_key.key_data
+
+  # network_interface
+  load_balancer_backend_address_pool_ids = [module.load_balancer.backend_address_pool_id]
+  subnet_id                              = one(module.virtual_network.subnet_id)
+
+  # custom data
 }

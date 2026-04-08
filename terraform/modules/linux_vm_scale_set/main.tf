@@ -2,19 +2,19 @@ resource "azurerm_linux_virtual_machine_scale_set" "this" {
   name                = var.name
   resource_group_name = var.rg_name
   location            = var.location
-  sku                 = "Standard_F2"
+  sku                 = "Standard_B2s"
   instances           = var.instances
   admin_username      = "adminuser"
 
   admin_ssh_key {
     username   = "adminuser"
-    public_key = ""
+    public_key = var.public_key
   }
 
   source_image_reference {
     publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts"
+    offer     = "ubuntu-24_04-lts"
+    sku       = "server"
     version   = "latest"
   }
 
@@ -35,5 +35,5 @@ resource "azurerm_linux_virtual_machine_scale_set" "this" {
     }
   }
 
-  custom_data = ""
+  # custom_data = base64encode(var.custom_data)
 }

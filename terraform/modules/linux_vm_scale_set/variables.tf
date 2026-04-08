@@ -21,6 +21,11 @@ variable "instances" {
   description = "Number of instances to deploy"
 }
 
+variable "public_key" {
+  type        = string
+  description = "SSH Public Key for VM"
+}
+
 variable "nic_name" {
   default     = "rg-global360-task"
   type        = string
@@ -33,6 +38,12 @@ variable "load_balancer_backend_address_pool_ids" {
 }
 
 variable "subnet_id" {
+  type        = string
+  description = "ID of the subnet to use for the VM"
+}
+
+variable "custom_data" {
+  default     = ""
   type        = string
   description = "ID of the subnet to use for the VM"
 }

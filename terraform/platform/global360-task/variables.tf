@@ -48,7 +48,7 @@ variable "address_prefixes" {
 variable "pip_name" {
   default     = "pip-global360-task"
   type        = string
-  description = "Name of the load balancer"
+  description = "Name of the public IP address"
 }
 
 variable "lbe_name" {
@@ -61,4 +61,17 @@ variable "lb_backend_address_pool_name" {
   default     = "backend-address-pool-global360-task"
   type        = string
   description = "The name of the Backend Address Pool"
+}
+
+# linux_vm_scale_set
+variable "vmss_name" {
+  default     = "pip-global360-task"
+  type        = string
+  description = "Name of the linux vm scale set"
+}
+
+variable "instances" {
+  default     = 2
+  type        = number
+  description = "Number of instances to deploy into the vm scale set"
 }
