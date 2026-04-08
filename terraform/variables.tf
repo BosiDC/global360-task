@@ -75,3 +75,8 @@ variable "instances" {
   type        = number
   description = "Number of instances to deploy into the vm scale set"
 }
+
+variable "tags" {
+  type        = map(string)
+  description = "A mapping of tags assigned to resource"
+}

@@ -38,3 +38,8 @@ variable "security_group" {
   type        = string
   description = "ID of the security group"
 }
+
+variable "tags" {
+  type        = map(string)
+  description = "A mapping of tags assigned to resource"
+}

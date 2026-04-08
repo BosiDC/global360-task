@@ -4,6 +4,7 @@ resource "azurerm_public_ip" "this" {
   resource_group_name = var.resource_group_name
   allocation_method   = "Static"
   domain_name_label   = "global360-task"
+  tags                = var.tags
 }
 
 resource "azurerm_lb" "this" {
@@ -15,6 +16,8 @@ resource "azurerm_lb" "this" {
     name                 = "lbe-pip-global360-task"
     public_ip_address_id = azurerm_public_ip.this.id
   }
+
+  tags = var.tags
 }
 
 resource "azurerm_lb_backend_address_pool" "this" {

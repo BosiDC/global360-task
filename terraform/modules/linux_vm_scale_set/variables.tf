@@ -46,3 +46,8 @@ variable "custom_data" {
   type        = string
   description = "ID of the subnet to use for the VM"
 }
+
+variable "tags" {
+  type        = map(string)
+  description = "A mapping of tags assigned to resource"
+}

@@ -1,6 +1,6 @@
 # resource group
 module "resource_group" {
-  source = "../../modules/resource_group"
+  source = "./modules/resource_group"
 
   name     = var.rg_name
   location = var.location
@@ -8,7 +8,7 @@ module "resource_group" {
 
 # network security group
 module "network_security_group" {
-  source = "../../modules/network_security_group"
+  source = "./modules/network_security_group"
 
   name                = var.nsg_name
   location            = var.location
@@ -17,7 +17,7 @@ module "network_security_group" {
 
 # virtual network
 module "virtual_network" {
-  source = "../../modules/virtual_network"
+  source = "./modules/virtual_network"
 
   name                = var.vnet_name
   resource_group_name = module.resource_group.name
@@ -31,7 +31,7 @@ module "virtual_network" {
 
 # ssh key
 module "ssh_key" {
-  source    = "../../modules/ssh_key"
+  source    = "./modules/ssh_key"
 
   parent_id = module.resource_group.id
   location  = var.location
@@ -39,7 +39,7 @@ module "ssh_key" {
 
 # load balancer
 module "load_balancer" {
-  source = "../../modules/load_balancer"
+  source = "./modules/load_balancer"
 
   pip_name            = var.pip_name
   location            = var.location
@@ -51,7 +51,7 @@ module "load_balancer" {
 
 # virtual machine scale set
 module "linux_vm_scale_set" {
-  source = "../../modules/linux_vm_scale_set"
+  source = "./modules/linux_vm_scale_set"
 
   name       = var.vmss_name
   rg_name    = module.resource_group.name
@@ -65,4 +65,6 @@ module "linux_vm_scale_set" {
 
   # custom data
   custom_data = filebase64("./configs/custom-data.yaml")
+
+  tags = var.tags
 }

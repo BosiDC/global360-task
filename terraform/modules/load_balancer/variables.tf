@@ -27,3 +27,8 @@ variable "lb_backend_address_pool_name" {
   type        = string
   description = "The name of the Backend Address Pool"
 }
+
+variable "tags" {
+  type        = map(string)
+  description = "A mapping of tags assigned to resource"
+}

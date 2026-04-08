@@ -9,3 +9,8 @@ variable "location" {
   type        = string
   description = "The Azure region to deploy into"
 }
+
+variable "tags" {
+  type        = map(string)
+  description = "A mapping of tags assigned to resource"
+}

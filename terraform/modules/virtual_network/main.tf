@@ -9,4 +9,6 @@ resource "azurerm_virtual_network" "this" {
     address_prefixes = var.address_prefixes
     security_group   = var.security_group
   }
+
+  tags = var.tags
 }

@@ -1,6 +1,14 @@
 # global vars
 location = "australiaeast"
 
+# tags
+tags = {
+  environemnt = "dev"
+  cost_center = "12345"
+  region      = "australiaeast"
+  application = "global360-task"
+}
+
 # resource_group
 rg_name = "rg-global360-task"
 
