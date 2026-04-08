@@ -7,5 +7,6 @@ resource "azurerm_virtual_network" "this" {
   subnet {
     name             = var.subnet_name
     address_prefixes = var.address_prefixes
+    security_group   = var.security_group
   }
 }

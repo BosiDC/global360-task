@@ -12,11 +12,18 @@ variable "rg_name" {
   description = "Name of the resouce group"
 }
 
+# network security group
+variable "nsg_name" {
+  default     = "nsg-global360-task"
+  type        = string
+  description = "Name of the network security group group"
+}
+
 # virtual group
 variable "vnet_name" {
   default     = "rg-global360-task"
   type        = string
-  description = "Name of the resouce group"
+  description = "Name of the virtual group group"
 }
 
 variable "subnet_name" {
