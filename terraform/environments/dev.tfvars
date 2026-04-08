@@ -3,7 +3,7 @@ location = "australiaeast"
 
 # tags
 tags = {
-  environemnt = "dev"
+  environment = "dev"
   cost_center = "12345"
   region      = "australiaeast"
   application = "global360-task"
