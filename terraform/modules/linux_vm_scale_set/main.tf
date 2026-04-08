@@ -36,7 +36,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "this" {
     }
   }
 
-  # custom_data = base64encode(var.custom_data)
+  custom_data = var.custom_data
 }
 
 resource "azurerm_monitor_autoscale_setting" "vmss_autoscale" {

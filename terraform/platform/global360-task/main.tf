@@ -64,5 +64,5 @@ module "linux_vm_scale_set" {
   subnet_id                              = one(module.virtual_network.subnet_id)
 
   # custom data
-  
+  custom_data = filebase64("./configs/custom-data.yaml")
 }

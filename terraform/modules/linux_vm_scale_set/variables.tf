@@ -43,7 +43,6 @@ variable "subnet_id" {
 }
 
 variable "custom_data" {
-  default     = ""
   type        = string
   description = "ID of the subnet to use for the VM"
 }
