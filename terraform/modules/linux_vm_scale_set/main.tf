@@ -28,9 +28,10 @@ resource "azurerm_linux_virtual_machine_scale_set" "this" {
     primary = true
 
     ip_configuration {
-      name      = "internal"
-      primary   = true
-      subnet_id = var.subnet_id
+      name                                   = "internal"
+      load_balancer_backend_address_pool_ids = var.load_balancer_backend_address_pool_ids
+      primary                                = true
+      subnet_id                              = var.subnet_id
     }
   }
 

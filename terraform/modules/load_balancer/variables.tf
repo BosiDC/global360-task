@@ -21,3 +21,9 @@ variable "resource_group_name" {
   type        = string
   description = "The name of the resource group in which to create the virtual network. Changing this forces a new resource to be created"
 }
+
+variable "lb_backend_address_pool_name" {
+  default     = "backend-address-pool-global360-task"
+  type        = string
+  description = "The name of the Backend Address Pool"
+}

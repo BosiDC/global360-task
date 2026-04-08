@@ -56,3 +56,9 @@ variable "lbe_name" {
   type        = string
   description = "Name of the load balancer"
 }
+
+variable "lb_backend_address_pool_name" {
+  default     = "backend-address-pool-global360-task"
+  type        = string
+  description = "The name of the Backend Address Pool"
+}

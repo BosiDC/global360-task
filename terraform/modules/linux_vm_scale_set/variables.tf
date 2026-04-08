@@ -27,6 +27,11 @@ variable "nic_name" {
   description = "Name of the resouce group"
 }
 
+variable "load_balancer_backend_address_pool_ids" {
+  type        = list
+  description = "A list of Backend Address Pools ID's from a Load Balancer which this Virtual Machine Scale Set should be connected to" 
+}
+
 variable "subnet_id" {
   type        = string
   description = "ID of the subnet to use for the VM"
