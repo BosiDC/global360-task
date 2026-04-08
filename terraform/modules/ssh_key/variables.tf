@@ -1,4 +1,4 @@
-variable "rg_id" {
+variable "parent_id" {
   type        = string
   description = "ID of the resouce group"
 }

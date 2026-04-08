@@ -19,3 +19,11 @@ module "virtual_network" {
   address_prefixes    = var.address_prefixes
 }
 
+# ssh_key
+module "ssh_key" {
+  source    = "../../modules/ssh_key"
+
+  parent_id = module.resource_group.id
+  location  = var.location
+}
+
