@@ -1,12 +1,34 @@
-# global360
-Built on Azure
+# global360 task
 
+## Azure
+I have decided to build this on Azure as I have extensive experience building on AWS but have no experience in Azure. I thought this task was a great opportunity to show that with my Terraform experience I am able to build on public clouds that I do not have much working/hands-on experience in. 
+
+## Steps to run
+### Authenticate Terraform to Azure
+1. Authenticate Terraform to Azure using Azure CLI: `az login`
+1. Create a Service Principal: `az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<SUBSCRIPTION_ID>"`
+1. Set environment variables: 
+```
+export ARM_CLIENT_ID="<APPID_VALUE>"
+export ARM_CLIENT_SECRET="<PASSWORD_VALUE>"
+export ARM_SUBSCRIPTION_ID="<SUBSCRIPTION_ID>"
+export ARM_TENANT_ID="<TENANT_VALUE>"
+```
+### Running Terraform
+1. Change directory to the terraform folder `cd terraform/`
+1. Run Terraform plan: `terraform plan --var-file=./dev/dev.tfvars -out=tfplan`
+1. Run Terraform apply: `terraform apply tfplan`
+
+## Architecture diagram
+
+## Estimated monthly cost
+
+
+# Task Description
 ## Goal:
-
 Stand up an auto-healing web tier that can lose any single VM without downtime.
 
 ## Must-haves
-
 1. Self-healing – terminating an instance triggers the platform to replace it automatically.
 1. Self-provisioning (IaC only) – one command stands everything up; a second run makes no changes.
 1. N + 1 capacity – traffic is spread across at least two instances behind a load balancer.
