@@ -65,7 +65,7 @@ variable "lb_backend_address_pool_name" {
 
 # linux_vm_scale_set
 variable "vmss_name" {
-  default     = "pip-global360-task"
+  default     = "vmss-global360-task"
   type        = string
   description = "Name of the linux vm scale set"
 }

@@ -45,6 +45,8 @@ module "load_balancer" {
   location            = var.location
   resource_group_name = module.resource_group.name
   lbe_name            = var.lbe_name
+
+  lb_backend_address_pool_name = ""
 }
 
 # virtual machine scale set
@@ -62,4 +64,5 @@ module "linux_vm_scale_set" {
   subnet_id                              = one(module.virtual_network.subnet_id)
 
   # custom data
+  
 }

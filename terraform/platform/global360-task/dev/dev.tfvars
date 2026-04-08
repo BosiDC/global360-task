@@ -12,3 +12,12 @@ vnet_name        = "vnet-global360-task"
 address_space    = ["10.0.0.0/16"]
 subnet_name      = "snet-global360-task"
 address_prefixes = ["10.0.0.0/24"]
+
+# load balancer
+lbe_name = "lbe-global360-task"
+pip_name = "pip-global360-task"
+
+lb_backend_address_pool_name = "backend-address-pool-global360-task"
+
+# linux vm scale set
+vmss_name = "vmss-global360-task"

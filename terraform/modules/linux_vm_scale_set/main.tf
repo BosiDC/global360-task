@@ -2,9 +2,10 @@ resource "azurerm_linux_virtual_machine_scale_set" "this" {
   name                = var.name
   resource_group_name = var.rg_name
   location            = var.location
-  sku                 = "Standard_B2s"
+  sku                 = "Standard_B2ls_v2"
   instances           = var.instances
   admin_username      = "adminuser"
+  zones               = ["2"]
 
   admin_ssh_key {
     username   = "adminuser"
