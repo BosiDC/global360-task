@@ -46,7 +46,7 @@ module "load_balancer" {
   resource_group_name = module.resource_group.name
   lbe_name            = var.lbe_name
 
-  lb_backend_address_pool_name = ""
+  lb_backend_address_pool_name = var.lb_backend_address_pool_name
 }
 
 # virtual machine scale set

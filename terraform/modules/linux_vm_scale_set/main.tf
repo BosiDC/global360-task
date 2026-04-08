@@ -38,3 +38,20 @@ resource "azurerm_linux_virtual_machine_scale_set" "this" {
 
   # custom_data = base64encode(var.custom_data)
 }
+
+resource "azurerm_monitor_autoscale_setting" "vmss_autoscale" {
+  name                = "vmss-autoscale"
+  location            = var.location
+  resource_group_name = var.rg_name
+  target_resource_id  = azurerm_linux_virtual_machine_scale_set.this.id
+
+  profile {
+    name = "vmss-fixed-2"
+
+    capacity {
+      minimum = 2
+      maximum = 2
+      default = 2
+    }
+  }
+}
