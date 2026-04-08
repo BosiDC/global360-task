@@ -4,6 +4,7 @@ module "resource_group" {
 
   name     = var.rg_name
   location = var.location
+  tags     = var.tags
 }
 
 # network security group
@@ -27,6 +28,7 @@ module "virtual_network" {
   subnet_name         = var.subnet_name
   address_prefixes    = var.address_prefixes
   security_group      = module.network_security_group.id
+  tags                = var.tags
 }
 
 # ssh key
@@ -45,6 +47,7 @@ module "load_balancer" {
   location            = var.location
   resource_group_name = module.resource_group.name
   lbe_name            = var.lbe_name
+  tags                = var.tags
 
   lb_backend_address_pool_name = var.lb_backend_address_pool_name
 }
