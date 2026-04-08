@@ -1,7 +1,7 @@
 variable "name" {
   default     = "nsg-global360-task"
   type        = string
-  description = "Name of the resouce group"
+  description = "Name of the network security group"
 }
 
 variable "resource_group_name" {

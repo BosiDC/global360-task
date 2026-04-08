@@ -43,3 +43,16 @@ variable "address_prefixes" {
   type        = list
   description = "The address prefixes to use for the subnet"
 }
+
+# load balancer 
+variable "pip_name" {
+  default     = "pip-global360-task"
+  type        = string
+  description = "Name of the load balancer"
+}
+
+variable "lbe_name" {
+  default     = "lbe-global360-task"
+  type        = string
+  description = "Name of the load balancer"
+}

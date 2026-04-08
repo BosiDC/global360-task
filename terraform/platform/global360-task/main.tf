@@ -30,14 +30,22 @@ module "virtual_network" {
 }
 
 # ssh key
-# module "ssh_key" {
-#   source    = "../../modules/ssh_key"
+module "ssh_key" {
+  source    = "../../modules/ssh_key"
 
-#   parent_id = module.resource_group.name
-#   location  = var.location
-# }
+  parent_id = module.resource_group.name
+  location  = var.location
+}
 
 # virtual machine scale set
 
 
 # load balancer
+module "load_balancer" {
+  source = "../../modules/load_balancer"
+
+  pip_name            = var.pip_name
+  location            = var.location
+  resource_group_name = module.resource_group.name
+  lbe_name            = var.lbe_name
+}
