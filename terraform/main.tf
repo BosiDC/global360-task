@@ -37,6 +37,7 @@ module "ssh_key" {
 
   parent_id = module.resource_group.id
   location  = var.location
+  tags      = var.tags
 }
 
 # load balancer
