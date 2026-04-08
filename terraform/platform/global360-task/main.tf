@@ -12,7 +12,7 @@ module "network_security_group" {
 
   name                = var.nsg_name
   location            = var.location
-  resource_group_name = var.rg_name
+  resource_group_name = module.resource_group.name
 }
 
 # virtual network
@@ -20,7 +20,7 @@ module "virtual_network" {
   source = "../../modules/virtual_network"
 
   name                = var.vnet_name
-  resource_group_name = var.rg_name
+  resource_group_name = module.resource_group.name
   location            = var.location
   address_space       = var.address_space
 
@@ -33,7 +33,7 @@ module "virtual_network" {
 # module "ssh_key" {
 #   source    = "../../modules/ssh_key"
 
-#   parent_id = module.resource_group.id
+#   parent_id = module.resource_group.name
 #   location  = var.location
 # }
 
