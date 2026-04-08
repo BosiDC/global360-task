@@ -20,9 +20,10 @@ export ARM_TENANT_ID="<TENANT_VALUE>"
 1. Run Terraform apply: `terraform apply tfplan`
 
 ## Architecture diagram
+![diagram](diagram.png)
 
-## Estimated monthly cost
-
+## Assumptions and estimated monthly cost
+Estimated monthly cost: Around $50 dollars 
 
 # Task Description
 ## Goal:
