@@ -16,7 +16,7 @@ export ARM_TENANT_ID="<TENANT_VALUE>"
 ```
 ### Running Terraform
 1. Change directory to the terraform folder `cd terraform/`
-1. Run Terraform plan: `terraform plan --var-file=./dev/dev.tfvars -out=tfplan`
+1. Run Terraform plan: `terraform plan --var-file=./environments/dev.tfvars -out=tfplan`
 1. Run Terraform apply: `terraform apply tfplan`
 
 ## Architecture diagram
