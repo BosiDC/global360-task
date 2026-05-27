@@ -1,4 +1,4 @@
-# global360 task
+# cloud infra task
 
 ## Azure
 I have decided to build this on Azure as I have extensive experience building on AWS from my previous roles but not on Azure. I thought this task was a great opportunity to show that with my Terraform experience I am able to build on public clouds that I do not have much working/hands-on experience in. 
